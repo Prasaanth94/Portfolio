@@ -1,3 +1,5 @@
+import ProjectCard from "./ProjectCard";
+import {useState} from 'react'
 import styles from "./components_css/Projects.module.css"
 
 const Projects = () => {
@@ -7,21 +9,30 @@ const Projects = () => {
         {title: 'Trippin Tales', stack: 'MERN', link: 'URL'},
         {title: 'ZoomKeys', stack: 'HTML , CSS, JS', link: 'URL'}
     ]
+
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const handleNext = () =>{
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
+    };
+
+    const handlePrevious = () =>{
+        setCurrentIndex((prevIndex)=> (prevIndex -1 + projects.length) % projects.length)
+;    }
+
     return (
         <div className={styles.projects} id='projects'>
-            {projects.map((project) => (
-                <div key={project.id} className={styles.project}>
-                    <h1>{project.title}</h1>
-                    <h2>{project.stack}</h2>
-                    <p>
-                        <a href={project.link} target="_blank" rel="noopener noreferrer">
-                            {project.link}
-                        </a>
-                    </p>
-                </div>
-            ))}
+        <ProjectCard project={projects[currentIndex]} />
+        <div className={styles.navigation}>
+            <button onClick={handlePrevious} disabled={projects.length <= 1}>
+                Previous
+            </button>
+            <button onClick={handleNext} disabled={projects.length <= 1}>
+                Next
+            </button>
         </div>
-    );
+    </div>
+);
 };
 
 export default Projects;
