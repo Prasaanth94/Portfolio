@@ -1,10 +1,11 @@
 .projects{
-    background-color: gray;
+    background-color: rgb(8, 9, 32);
     height: 100vh;
     display: flex;
     flex-direction: column;
     padding: 20px;
     text-align: center;
+    color: rgb(199, 197, 197);
 }
 
 
@@ -28,4 +29,24 @@
 .title{
     margin-top: 50px;
     text-decoration: underline;
+}
+
+.slide {
+    transition: transform 0.5s ease-in-out; /* Apply transition to control the sliding effect */
+}
+
+.projectAnimation {
+    width: 100%; /* Ensure the animation container takes the full width */
+}
+
+.projectContainer {
+    overflow: hidden; /* Hide overflow to prevent content from overflowing during animation */
+}
+
+.projectAnimation.next {
+    transform: translateX(100%); /* Slide the component out to the right */
+}
+
+.projectAnimation.previous {
+    transform: translateX(-100%); /* Slide the component out to the left */
 }

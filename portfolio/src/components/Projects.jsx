@@ -13,6 +13,7 @@ const Projects = () => {
     ]
 
     const [currentIndex, setCurrentIndex] = useState(0);
+    const totalProjects = projects.length;
 
     const handleNext = () =>{
         setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
@@ -22,15 +23,20 @@ const Projects = () => {
         setCurrentIndex((prevIndex)=> (prevIndex -1 + projects.length) % projects.length)
 ;    }
 
-    return (
-        <div className={styles.projects} id='projects'>
-            <h1 className={styles.title}>Projects</h1>
-        <ProjectCard project={projects[currentIndex]} />
+return (
+    <div className={styles.projects} id='projects'>
+        <h1 className={styles.title}>Projects</h1>
+        <div className={styles.projectContainer}>
+            {/* Apply the slide-in/out animation to the ProjectCard component */}
+            <div className={`${styles.projectAnimation}`}>
+                <ProjectCard project={projects[currentIndex]} />
+            </div>
+        </div>
         <div className={styles.navigation}>
-            <button onClick={handlePrevious} disabled={projects.length <= 1}>
+            <button onClick={handlePrevious} disabled={totalProjects <= 1}>
                 Previous
             </button>
-            <button onClick={handleNext} disabled={projects.length <= 1}>
+            <button onClick={handleNext} disabled={totalProjects <= 1}>
                 Next
             </button>
         </div>

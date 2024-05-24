@@ -4,7 +4,7 @@ import { FaGithub } from "react-icons/fa";
 const ProjectCard = ({project}) => {
 
     return (
-        <div className={`${styles.ProjectCard} ${styles.fade_in_out}`}>
+        <div className={`${styles.ProjectCard} `}>
             <div className={styles.projectContent}>
                 {project.deployed_link ? (
                     <iframe 
@@ -21,7 +21,7 @@ const ProjectCard = ({project}) => {
                     <h2 className={styles.project_stack}>{project.stack}</h2>
                     <p className={styles.project_description}>{project.description}</p>
                     <p className={styles.codes}>View the codes :   <a className={styles.project_link} href={project.link} target="_blank" rel="noopener noreferrer">
-                    <FaGithub  size={50} color="black"/>
+                    <FaGithub  size={50} color="white"/>
                     </a></p>
                     {project.deployed_link && (
                         <a className={styles.deployed_link} href={project.deployed_link} target="_blank" rel="noopener noreferrer">Try The Game Here!</a>

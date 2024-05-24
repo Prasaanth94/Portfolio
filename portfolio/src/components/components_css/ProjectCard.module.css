@@ -52,14 +52,10 @@
 
 .deployed_link{
     margin-top: 20px;
-    color: black;
+    color: rgb(199, 197, 197);
 }
 
 .codes{
     margin-top: 20px;
 }
 
-.fade_in_out {
-    transition: opacity 0.5s ease-in-out;
-    opacity: 0.5;
-}
