@@ -5,6 +5,7 @@
     grid-template-columns: 200px 200px 200px 200px 200px 200px 200px 200px;
     grid-template-rows: 200px 200px 200px 200px 200px;
     justify-items: center;
+    margin: 0!important;
     
 }
 
@@ -32,12 +33,60 @@
 }
 
 .name{
-    font-weight: 650;
+    font-size: 50px;
+    letter-spacing: 7px!important;
+    cursor: pointer;
+    font-weight: bold!important;
+    text-transform: uppercase;
+    
+}
+
+.name{
+    background: linear-gradient(to right, hsl(0, 0%, 30%) 0, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 30%) 20%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s infinite linear;
+}
+
+@keyframes shine {
+    0% {
+        background-position: -300px; /* Start the animation with the background partially visible */
+    }
+    100% {
+        background-position: calc(100% + 300px); /* Move the background completely off-screen at the end */
+    }
 }
 
 .developer{
+    position: relative;
+    
     font-size: 30px;
+    font-weight: bold!important;
+    font-family: "Anonymous Pro", monospace!important;
+    letter-spacing: 1px!important;
+    overflow: hidden;
+    border-right: 2px solid hsl(153, 69%, 5%);
+    white-space: nowrap;
+    animation: typewriter 4s steps(44) 1s 1 normal both,
+      blinkTextCursor 500ms infinite;
 }
+
+@keyframes typewriter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 420px;
+    }
+  }
+  @keyframes blinkTextCursor {
+    from {
+      border-right-color: hsl(153, 69%, 5%);
+    }
+    to {
+      border-right-color: transparent;
+    }
+  }
 
 .skills{
     font-weight: 700;
@@ -46,4 +95,9 @@
 
 .skills:hover{
     cursor: pointer;
+}
+
+.description{
+    margin-top: 20px;
+   font-size: 20px;
 }
