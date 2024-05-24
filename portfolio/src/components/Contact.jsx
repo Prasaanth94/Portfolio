@@ -5,6 +5,7 @@ const Contact = () => {
         <div className={styles.contact} id='contact'>
             <button className={styles.select}>select</button>
             <p>HELLO THERE</p>
+        
         </div>
     );
 };
