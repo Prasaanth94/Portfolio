@@ -6,6 +6,7 @@
     padding: 20px;
     text-align: center;
     color: rgb(199, 197, 197);
+    overflow: hidden;
 }
 
 
@@ -14,39 +15,91 @@
     margin-top: 20px;
 }
 
-.navigation button {
-    margin: 0 10px;
-    padding: 10px 20px;
-    font-size: 16px;
+.nextBtn {
+    height: 50px;
+    margin: 5px;
+    width: 120px;
+    background: #333;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     cursor: pointer;
-}
-
-.navigation button:disabled {
-    cursor: not-allowed;
-    opacity: 0.5;
-}
-
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-family: Consolas, Courier New, monospace;
+    border: solid #404c5d 1px;
+    font-size: 16px;
+    color: rgb(161, 161, 161);
+    -webkit-transition: 500ms;
+    transition: 500ms;
+    border-radius: 5px;
+    background: linear-gradient(145deg, #2e2d2d, #212121);
+    -webkit-box-shadow: -1px -5px 15px #41465b, 5px 5px 15px #41465b,
+      inset 5px 5px 10px #212121, inset -5px -5px 10px #212121;
+    box-shadow: -1px -5px 15px #41465b, 5px 5px 15px #41465b,
+      inset 5px 5px 10px #212121, inset -5px -5px 10px #212121;
+  }
+  
+  .nextBtn:hover {
+    -webkit-box-shadow: 1px 1px 13px #20232e, -1px -1px 13px #545b78;
+    box-shadow: 1px 1px 13px #20232e, -1px -1px 13px #545b78;
+    color: #d6d6d6;
+    -webkit-transition: 500ms;
+    transition: 500ms;
+  }
+  
+  .nextBtn:active {
+    -webkit-box-shadow: 1px 1px 13px #20232e, -1px -1px 33px #545b78;
+    box-shadow: 1px 1px 13px #20232e, -1px -1px 33px #545b78;
+    color: #d6d6d6;
+    -webkit-transition: 100ms;
+    transition: 100ms;
+  }
+  
 .title{
     margin-top: 50px;
     text-decoration: underline;
 }
 
-.slide {
-    transition: transform 0.5s ease-in-out; /* Apply transition to control the sliding effect */
-}
-
-.projectAnimation {
-    width: 100%; /* Ensure the animation container takes the full width */
-}
-
 .projectContainer {
-    overflow: hidden; /* Hide overflow to prevent content from overflowing during animation */
+    position: relative;
+    overflow: hidden;
+    height: 100%; /* Adjust based on your design */
 }
 
-.projectAnimation.next {
-    transform: translateX(100%); /* Slide the component out to the right */
+.projectWrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%; /* Adjust based on your design */
 }
 
-.projectAnimation.previous {
-    transform: translateX(-100%); /* Slide the component out to the left */
+.slide_in_left {
+    animation: slideInFromLeft 0.5s ease-in-out forwards;
+}
+
+.slide_in_right {
+    animation: slideInFromRight 0.5s ease-in-out forwards;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }

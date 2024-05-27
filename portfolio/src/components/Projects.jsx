@@ -1,5 +1,5 @@
 import ProjectCard from "./ProjectCard";
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import styles from "./components_css/Projects.module.css"
 import DessertDash from "/DessertDash.gif"
 import TrippinTales from "/TrippingTales.gif"
@@ -13,34 +13,49 @@ const Projects = () => {
     ]
 
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [animation, setAnimation] = useState('');
+    const [isAnimating, setIsAnimating] = useState(false);
     const totalProjects = projects.length;
 
-    const handleNext = () =>{
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
+    const handleNext = () => {
+        setAnimation('slide_in_right');
+        setIsAnimating(true);
+        setTimeout(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
+            setAnimation("");
+            setIsAnimating(false);
+        }, 500); // Match the duration of the animation
     };
 
-    const handlePrevious = () =>{
-        setCurrentIndex((prevIndex)=> (prevIndex -1 + projects.length) % projects.length)
-;    }
+    const handlePrevious = () => {
+        setAnimation('slide_in_left');
+        setIsAnimating(true);
+        setTimeout(() => {
+            setCurrentIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length);
+            setAnimation("");
+            setIsAnimating(false);
+        }, 500); // Match the duration of the animation
+    };
+
 
 return (
-    <div className={styles.projects} id='projects'>
-        <h1 className={styles.title}>Projects</h1>
-        <div className={styles.projectContainer}>
-            {/* Apply the slide-in/out animation to the ProjectCard component */}
-            <div className={`${styles.projectAnimation}`}>
-                <ProjectCard project={projects[currentIndex]} />
-            </div>
-        </div>
-        <div className={styles.navigation}>
-            <button onClick={handlePrevious} disabled={totalProjects <= 1}>
-                Previous
-            </button>
-            <button onClick={handleNext} disabled={totalProjects <= 1}>
-                Next
-            </button>
+    <div className={styles.projects} id="projects">
+    <h1 className={styles.title}>Projects</h1>
+    <div className={styles.projectContainer}>
+        <div className={`${styles.projectWrapper} ${styles[animation]}`}>
+            {!isAnimating && <ProjectCard project={projects[currentIndex]} />}
+            {isAnimating && <ProjectCard project={projects[(currentIndex + (animation === 'slide_in_right' ? 1 : -1) + projects.length) % projects.length]} />}
         </div>
     </div>
+    <div className={styles.navigation}>
+        <button onClick={handlePrevious} disabled={totalProjects <= 1} className={styles.nextBtn}>
+            Previous
+        </button>
+        <button onClick={handleNext} disabled={totalProjects <= 1} className={styles.nextBtn}>
+            Next
+        </button>
+    </div>
+</div>
 );
 };
 
