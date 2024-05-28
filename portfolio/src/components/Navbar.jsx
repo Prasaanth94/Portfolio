@@ -1,20 +1,26 @@
-
-
-import { Disclosure} from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Disclosure, Transition } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { useState } from 'react';
 
 const navigation = [
   { name: 'About Me', href: '#about-me', current: true },
   { name: 'Projects', href: '#projects', current: false },
   { name: 'Contact', href: '#contact', current: false },
   { name: 'Resume', href: '#', current: false },
-]
+];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(' ');
 }
 
 export default function Example() {
+  const [currentItem, setCurrentItem] = useState(navigation.find(item => item.current));
+
+  const handleItemClick = (item) => {
+    setCurrentItem(item);
+  };
+
   return (
     <Disclosure as="nav" className="bg-gray-800 fixed w-full z-50">
       {({ open }) => (
@@ -44,10 +50,11 @@ export default function Example() {
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                          item === currentItem ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                           'rounded-md px-3 py-2 text-md font-medium'
                         )}
-                        aria-current={item.current ? 'page' : undefined}
+                        aria-current={item === currentItem ? 'page' : undefined}
+                        onClick={() => handleItemClick(item)}
                       >
                         {item.name}
                       </a>
@@ -56,17 +63,12 @@ export default function Example() {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <button
-                  type="button"
-                  className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                >
-                  <span className="absolute -inset-1.5" />
-                  <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
-
-                
-               
+                <a href="https://github.com/Prasaanth94" target="_blank" rel="noopener noreferrer">
+                  <FaGithub  size={30} color="white" style={{marginRight: '20px'}}/>
+                </a>
+                <a href="https://linkedin.com/in/m-prasaanth" target="_blank" rel="noopener noreferrer">
+                  <FaLinkedin  size={30} color="white"/>
+                </a>
               </div>
             </div>
           </div>
@@ -79,10 +81,11 @@ export default function Example() {
                   as="a"
                   href={item.href}
                   className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                    item === currentItem ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                     'block rounded-md px-3 py-2 text-base font-medium'
                   )}
-                  aria-current={item.current ? 'page' : undefined}
+                  aria-current={item === currentItem ? 'page' : undefined}
+                  onClick={() => handleItemClick(item)}
                 >
                   {item.name}
                 </Disclosure.Button>
@@ -92,5 +95,5 @@ export default function Example() {
         </>
       )}
     </Disclosure>
-  )
+  );
 }

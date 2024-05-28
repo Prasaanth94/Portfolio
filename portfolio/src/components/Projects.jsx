@@ -1,5 +1,5 @@
 import ProjectCard from "./ProjectCard";
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 import styles from "./components_css/Projects.module.css"
 import DessertDash from "/DessertDash.gif"
 import TrippinTales from "/TrippingTales.gif"
