@@ -43,7 +43,7 @@ const AboutMe = () => {
             <Bounce><h1 className={styles.name}>Prasaanth</h1></Bounce>
             <h3 className={styles.developer}>An Aspiring Developer...</h3>
             <p className={styles.description}>Driven and freshly graduated from a rigorous coding bootcamp, I am a software developer eager to embark on my professional journey in this industry. 
-                With a good foundation in coding and passion for continuous learning, I am actively seeking opportunities to apply my <span className={styles.skills} onClick={setSkills}>SKILLS</span>. 
+                With a good foundation in coding and passion for continuous learning, I am actively seeking opportunities to apply my <span className={styles.skills} onClick={handleSkills}>SKILLS</span>. 
                 Equipped with strong communication skills and collaborative spirit, I thrive in a team setting where I can contribute and learn from my peers. 
                 Being quick to adapt helps me grasp new concepts ensuring I can perform up to standard.
                  My dedication to learning, coupled with a strong work ethic fuels my commitment to deliver expectations. 

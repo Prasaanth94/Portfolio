@@ -15,7 +15,17 @@ const Projects = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [animation, setAnimation] = useState('');
     const [isAnimating, setIsAnimating] = useState(false);
-    const totalProjects = projects.length;
+    const totalProjects = projects.length
+    let currentPage = currentIndex + 1;
+    let previousPage = currentPage - 1;
+    if(previousPage < 1){
+        previousPage = totalProjects
+    }
+    let nextPage = currentPage + 1;
+    if(nextPage > totalProjects){
+        nextPage = 1;
+    }
+    
 
     const handleNext = () => {
         setAnimation('slide_in_right');
@@ -47,6 +57,7 @@ return (
             {isAnimating && <ProjectCard project={projects[(currentIndex + (animation === 'slide_in_right' ? 1 : -1) + projects.length) % projects.length]} />}
         </div>
     </div>
+    <div>{previousPage}  <span className={styles.currentPage}>{currentPage}</span>  {nextPage}</div>
     <div className={styles.navigation}>
         <button onClick={handlePrevious} disabled={totalProjects <= 1} className={styles.nextBtn}>
             Previous
