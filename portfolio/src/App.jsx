@@ -8,6 +8,21 @@ import Projects from './components/Projects'
 function App() {
   return (
     <>
+      <div className="background">
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+</div>
     <Navbar></Navbar>
     <AboutMe></AboutMe>
     <Projects></Projects>

@@ -1,10 +1,11 @@
 import styles from "./components_css/Contact.module.css";
+import ContactForm from "./ContactForm"
 
 const Contact = () => {
     return (
         <div className={styles.contact} id='contact'>
-            <button className={styles.select}>select</button>
-            <p>HELLO THERE</p>
+            
+         <ContactForm></ContactForm>   
             
         </div>
     );
