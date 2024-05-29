@@ -1,0 +1,124 @@
+.aboutMe {
+    /* background-color: rgb(8, 9, 32); */
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px 200px 200px 200px 200px;
+    grid-template-rows: 200px 200px 200px 200px 200px;
+    justify-items: center;
+    margin: 0!important;
+    color: rgb(199, 197, 197);
+    
+}
+
+.aboutMe{
+  
+  animation: 2.5s cubic-bezier(.25, 1, .30, 1) wipe-in-left both;
+}
+
+@keyframes wipe-in-left {
+  from {
+    clip-path: inset(0 0 0 100%);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+[transition-style="in:wipe:left"] {
+  animation: 2.5s cubic-bezier(.25, 1, .30, 1) wipe-in-left both;
+}
+
+.profile_img{
+    height: 400px;
+    width: 400px;
+    background-color: white;
+    grid-row: 2 / 4;
+    grid-column: 7/9;
+    margin-top: 50px;
+    border-radius: 39% 61% 62% 38% / 56% 34% 66% 44%  ;
+    overflow: hidden;
+}
+
+.aboutMe_text{
+    width: 600px;
+    text-align: left;
+    grid-row: 2/5;
+    grid-column: 2/6;
+    margin-top: 50px;
+}
+
+.intro{
+    font-size: 20px;
+}
+
+.name{
+    font-size: 50px;
+    letter-spacing: 7px!important;
+    cursor: pointer;
+    font-weight: bold!important;
+    text-transform: uppercase;
+    
+}
+
+.name{
+    background: linear-gradient(to right, hsl(0, 0%, 30%) 0, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 30%) 20%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s infinite linear;
+}
+
+@keyframes shine {
+    0% {
+        background-position: -300px; /* Start the animation with the background partially visible */
+    }
+    100% {
+        background-position: calc(100% + 300px); /* Move the background completely off-screen at the end */
+    }
+}
+
+.developer{
+    position: relative;
+    
+    font-size: 30px;
+    font-weight: bold!important;
+    font-family: "Anonymous Pro", monospace!important;
+    letter-spacing: 1px!important;
+    overflow: hidden;
+    border-right: 2px solid rgb(199, 197, 197);
+    white-space: nowrap;
+    animation: typewriter 4s steps(44) 1s 1 normal both,
+      blinkTextCursor 500ms infinite;
+}
+
+@keyframes typewriter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 420px;
+    }
+  }
+  @keyframes blinkTextCursor {
+    from {
+      border-right-color: rgb(199, 197, 197);
+    }
+    to {
+      border-right-color: transparent;
+    }
+  }
+
+.skills{
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.skills:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.description{
+    margin-top: 20px;
+   font-size: 20px;
+}
+
