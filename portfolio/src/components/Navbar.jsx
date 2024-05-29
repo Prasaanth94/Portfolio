@@ -1,7 +1,8 @@
-import { Disclosure, Transition } from '@headlessui/react';
+import { Disclosure} from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { useState } from 'react';
+import Resume from "./Resume"
 
 const navigation = [
   { name: 'About Me', href: '#about-me', current: true },
@@ -16,12 +17,20 @@ function classNames(...classes) {
 
 export default function Example() {
   const [currentItem, setCurrentItem] = useState(navigation.find(item => item.current));
+  const [showResume, setShowResume] = useState(false);
 
   const handleItemClick = (item) => {
-    setCurrentItem(item);
+    if(item.name === 'Resume'){
+      setShowResume(true);
+    }
+    else{
+      setCurrentItem(item);
+      setShowResume(false);
+    }
   };
 
   return (
+    <>
     <Disclosure as="nav" className="bg-gray-800 fixed w-full z-50">
       {({ open }) => (
         <>
@@ -95,5 +104,7 @@ export default function Example() {
         </>
       )}
     </Disclosure>
+    {showResume && <Resume setShowResume={setShowResume}/>}
+    </>
   );
 }

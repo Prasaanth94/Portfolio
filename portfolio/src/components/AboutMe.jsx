@@ -20,21 +20,7 @@ const AboutMe = () => {
     }
     return (
         <div className={styles.aboutMe} id="about-me">
-            {/* <div className={styles.background}>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-   <span></span>
-</div> */}
+ 
          <div className={styles.profile_img}> 
          <img src={profile_img} className={styles.image} ></img>
          </div>

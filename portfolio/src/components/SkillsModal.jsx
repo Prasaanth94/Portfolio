@@ -12,6 +12,7 @@ import ReactIcon from "../assets/skillsIcons/icons8-react-a-javascript-library-f
 import VSIcon from "../assets/skillsIcons/icons8-visual-studio.svg"
 import GitHubIcon from "../assets/skillsIcons/icons8-github.svg"
 import { useEffect } from "react"
+import PropTypes from 'prop-types';
 
 const OverLay = (props) =>{
 
@@ -69,6 +70,10 @@ const OverLay = (props) =>{
     )
 };
 
+OverLay.propTypes = {
+    setSkills: PropTypes.func.isRequired
+}
+
 const SkillsModal = (props) =>{
 
     return(
@@ -81,7 +86,11 @@ const SkillsModal = (props) =>{
             document.querySelector("#modal-root")
         )}
         </>
-    )
-}
+    );
+};
+
+SkillsModal.propTypes = {
+    setSkills: PropTypes.func.isRequired
+};
 
 export default SkillsModal;
