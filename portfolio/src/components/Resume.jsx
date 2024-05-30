@@ -14,7 +14,7 @@ const OverLay = (props) =>{
         <div className={styles.backdrop}>
             <div className={styles.modal}>
                 
-                <a href="/public/Prasaanth(Resume).pdf" download="/public/Prasaanth(Resume).pdf" className={styles.downloadResumeButton}>Download Resume</a>
+                <a href="/Prasaanth(Resume).pdf" download="/public/Prasaanth(Resume).pdf" className={styles.downloadResumeButton}>Download Resume</a>
                 <button onClick={handleClose}>Close</button>
             </div>
         </div>
