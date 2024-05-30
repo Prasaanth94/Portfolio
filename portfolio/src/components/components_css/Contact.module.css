@@ -30,12 +30,42 @@
 }
 
 /* Optional: Adjust these for better responsiveness */
+@media (max-width: 1024px) {
+    .contact_intro {
+        width: 300px; /* Adjust based on your design */
+    }
+
+    .Astronot {
+        height: 300px;
+        width: 300px;
+    }
+}
+
 @media (max-width: 768px) {
     .contact_content {
         flex-direction: column;
+        align-items: center;
     }
 
     .contact_intro, .contact_form {
         width: 100%;
+        text-align: center;
+    }
+
+    .Astronot {
+        height: 250px;
+        width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact_intro {
+        width: 100%;
+        text-align: center;
+    }
+
+    .Astronot {
+        height: 200px;
+        width: 200px;
     }
 }
