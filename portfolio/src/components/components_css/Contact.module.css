@@ -1,15 +1,41 @@
-.contact{
-    /* background-image: url(../../../public/wave-haikei.png);
-    background-size: 100% 100% ;
-    background-position: center; */
+.contact {
     height: 100vh;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
-    text-align: center;
     color: rgb(199, 197, 197);
     overflow: hidden;
-    
-
+    /* background: url('../../../public/wave-haikei.png') center/cover no-repeat; */
 }
 
+.contact_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Adjust this value based on your design */
+    gap: 20px; /* Optional: adjust the gap between the two sections */
+}
+
+.contact_intro {
+    width: 400px;/* Allow the intro to take up the remaining space */
+    text-align: center; /* Align text to the left */
+}
+
+.Astronot{
+    height: 400px;
+    width: 400px;
+    z-index: -1;
+}
+
+/* Optional: Adjust these for better responsiveness */
+@media (max-width: 768px) {
+    .contact_content {
+        flex-direction: column;
+    }
+
+    .contact_intro, .contact_form {
+        width: 100%;
+    }
+}

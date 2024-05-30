@@ -2,9 +2,9 @@
 
 .contactForm {
 
-    max-width: 600px;
+    width: 450px;
     margin: auto auto;
-    padding: 2rem;
+    padding: 1.5rem;
     background: linear-gradient( gray, black);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -26,11 +26,12 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;
+    color: black;
 }
 
 .textarea {
     resize: vertical;
-    height: 150px;
+    height: 200px;
 }
 
 .error {
