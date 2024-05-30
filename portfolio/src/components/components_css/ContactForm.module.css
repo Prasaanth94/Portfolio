@@ -77,3 +77,25 @@
     -webkit-transition: 500ms;
     transition: 500ms;
 }
+
+
+@media (max-width: 1024px) {
+    .contactForm {
+        width: 400px;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contactForm {
+        width: 350px;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contactForm {
+        width: 100%;
+        padding: 1rem;
+    }
+}

@@ -59,3 +59,85 @@
     margin-top: 20px;
 }
 
+@media (max-width: 1200px) {
+    .projectContent {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projectImage {
+        height: 300px;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .projectText {
+        text-align: center;
+    }
+
+    .project_title {
+        font-size: 2.5rem;
+    }
+
+    .project_stack {
+        font-size: 1.5rem;
+    }
+
+    .project_description {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .ProjectCard {
+        padding: 15px;
+        margin-top: 30px;
+    }
+
+    .projectImage {
+        height: 250px;
+    }
+
+    .project_title {
+        font-size: 2rem;
+    }
+
+    .project_stack {
+        font-size: 1.3rem;
+    }
+
+    .project_description {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .ProjectCard {
+        padding: 10px;
+        margin-top: 20px;
+    }
+
+    .projectImage {
+        height: 200px;
+    }
+
+    .project_title {
+        font-size: 1.5rem;
+    }
+
+    .project_stack {
+        font-size: 1rem;
+    }
+
+    .project_description {
+        font-size: 0.9rem;
+    }
+
+    .project_link,
+    .deployed_link,
+    .codes {
+        margin-top: 10px;
+    }
+}
+
